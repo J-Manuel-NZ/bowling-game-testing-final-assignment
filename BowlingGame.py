@@ -15,14 +15,13 @@ class BowlingGame:
         for frameIndex in range(10):
             if self.isStrike(rollIndex):
                 result += self.strikeScore(rollIndex) # re-named to strikeScore (there was a spelling error)
-                self.rolls.insert(rollIndex + 1, 0) # If the roll is a strike, then add the next 'roll' as 0
-                rollIndex +=2 # every loop checks the whole 'frame' which is every 2 'rollIndex' values 
+                rollIndex +=1 
             elif self.isSpare(rollIndex):
                 result += self.spareScore(rollIndex)
-                rollIndex +=2 # changed to 2
+                rollIndex +=2 
             else:
                 result += self.frameScore(rollIndex)
-                rollIndex +=2 # changed to 2
+                rollIndex +=2 
         return result
 
     def isStrike(self, rollIndex):
