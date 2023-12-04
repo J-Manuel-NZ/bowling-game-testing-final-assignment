@@ -39,6 +39,15 @@ class TestBowlingGame(unittest.TestCase):
         self.game.roll(2)
         self.rollMany(0,14)
         assert self.game.score() == 46
+    
+    def testTwoSpares(self):
+        self.game.roll(2)
+        self.game.roll(8)
+        self.game.roll(5)
+        self.game.roll(5)
+        self.game.roll(3)
+        self.rollMany(0,15)
+        assert self.game.score() == 31
 
     def testPerfectGame(self):
         self.rollMany(10,12)
